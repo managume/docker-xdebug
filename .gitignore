@@ -1,6 +1,3 @@
-## General
-!*.gitkeep
-
 ## Visual Code
 .vscode/*
 !.vscode/launch.json
@@ -9,6 +6,9 @@
 .docker/backup/*
 .docker/logs/*
 .docker/data/*
+!.docker/backup/*.gitkeep
+!.docker/logs/*.gitkeep
+!.docker/data/*.gitkeep
 *.env
 !dist.env
 
