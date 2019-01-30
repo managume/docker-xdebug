@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## Use this command to exec whatever with root privileges within apache service
+
+docker-compose exec www "$@"

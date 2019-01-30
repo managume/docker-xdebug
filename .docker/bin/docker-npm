@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## Use this command to exec npm within apache service
+
+docker-compose exec -u www-data www npm "$@"

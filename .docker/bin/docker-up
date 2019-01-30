@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## Use this command to up and run docker in background
+
+docker-compose up -d --build --no-recreate

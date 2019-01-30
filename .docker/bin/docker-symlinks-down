@@ -1,0 +1,39 @@
+#!/bin/bash
+
+## Execute from project root to undone symlinks to custom docker commands
+
+if [ -L 'dup' ]; then
+unlink dup
+fi
+
+if [ -L 'ddown' ]; then
+unlink ddown
+fi
+
+if [ -L 'dreset' ]; then
+unlink dreset
+fi
+
+if [ -L 'dexec' ]; then
+unlink dexec
+fi
+
+if [ -L 'droot' ]; then
+unlink droot
+fi
+
+if [ -L 'ddrush' ]; then
+unlink ddrush
+fi
+
+if [ -L 'dcomposer' ]; then
+unlink dcomposer
+fi
+
+if [ -L 'dconsole' ]; then
+unlink dconsole
+fi
+
+if [ -L 'dnpm' ]; then
+unlink dnpm
+fi

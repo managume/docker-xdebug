@@ -1,0 +1,62 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: ${APP_NAME:-drupal8project}-db
+    image: ${DB_PROVIDER:-mysql}:${DB_VERSION:-5.6}
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${DB_NAME:-drupal8projectdb}
+      MYSQL_USER: ${DB_USER:-developer}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-developer}
+    volumes:
+      - ${APP_DIR}/.docker/data:/var/lib/mysql
+    ports:
+      - ${DB_PORT:-3306}:3306
+    networks: 
+      net:
+        aliases:
+          - ${APP_NAME:-drupal8project}.db
+  
+  www:
+    build: 
+      context: .docker/www
+      args:
+        - PHP_VERSION=${PHP_VERSION:-7.2}
+    container_name: ${APP_NAME:-drupal8project}-www
+    command: ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+    tty: true
+    links:
+      - db
+    volumes:
+      - ${APP_DIR:-.}:/var/www/html:cached
+      - ${APP_DIR:-.}/.docker/logs:/var/log/apache2/
+    ports:
+      - ${HTTP_PORT:-80}:80
+      - ${HTTPS_PORT:-80}:443
+      - ${PMA_PORT:-8080}:8080
+    networks:
+      net:
+        aliases:
+          - ${APP_NAME:-drupal8project}.www
+
+  mailhog:
+    container_name: ${APP_NAME:-drupal8project}-mailhog
+    image: mailhog/mailhog
+    ports:
+      - ${MAILHOG_SMTP_PORT:-1025}:1025
+      - ${MAILHOG_HTTP_PORT:-8025}:8025
+    networks:
+      net:
+        aliases:
+          - ${APP_NAME:-drupal8project}.mailhog
+
+networks: 
+  net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${NET_IP:-172.21.1.0/24}
+#  proxy:
+#    external:
+#      name: nginx-proxy

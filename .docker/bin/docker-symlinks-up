@@ -1,0 +1,48 @@
+#!/bin/bash
+
+## Execute from project root to create symlinks to custom docker commands
+
+if [ -L 'dup' ]; then
+unlink dup
+fi
+ln -s .docker/bin/docker-up dup
+
+if [ -L 'ddown' ]; then
+unlink ddown
+fi
+ln -s .docker/bin/docker-down ddown
+
+if [ -L 'dreset' ]; then
+unlink dreset
+fi
+ln -s .docker/bin/docker-reset dreset
+
+if [ -L 'dexec' ]; then
+unlink dexec
+fi
+ln -s .docker/bin/docker-exec dexec
+
+if [ -L 'droot' ]; then
+unlink droot
+fi
+ln -s .docker/bin/docker-root droot
+
+if [ -L 'ddrush' ]; then
+unlink ddrush
+fi
+ln -s .docker/bin/docker-drush ddrush
+
+if [ -L 'dcomposer' ]; then
+unlink dcomposer
+fi
+ln -s .docker/bin/docker-composer dcomposer
+
+if [ -L 'dconsole' ]; then
+unlink dconsole
+fi
+ln -s .docker/bin/docker-console dconsole
+
+if [ -L 'dnpm' ]; then
+unlink dnpm
+fi
+ln -s .docker/bin/docker-npm dnpm

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## Use stop and down Docker
+
+docker-compose down
