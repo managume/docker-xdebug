@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Docker template for Drupal 8 projects
 
 ## Content
@@ -89,6 +88,3 @@ After exec ```sh .docker/bin/docker-symlinks-up``` following commands are availa
 * ```sh ddrush``` Drush
 * ```sh dconsole``` Drupal console
 * ```sh dnpm``` Npm         
-=======
-# docker-xdebug
->>>>>>> 0a77269de5ecfaa4ecd171e39ec37f9cd73d9cf0
