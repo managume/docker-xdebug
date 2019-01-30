@@ -1,0 +1,14 @@
+## General
+!*.gitkeep
+
+## Visual Code
+.vscode/*
+!.vscode/launch.json
+
+## Docker
+.docker/backup/*
+.docker/logs/*
+.docker/data/*
+*.env
+!dist.env
+
