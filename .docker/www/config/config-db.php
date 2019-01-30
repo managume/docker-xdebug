@@ -9,10 +9,10 @@
 ## you'll probably also want to edit the configuration file mentioned
 ## above too.
 ##
-$dbuser='root';
-$dbpass=getenv('DB_ROOT_PASSWORD');
+$dbuser=getenv('DB_USER');
+$dbpass=getenv('DB_PASSWORD');
 $basepath='';
 $dbname='phpmyadmin';
-$dbserver=getenv('DB_ALIAS');
+$dbserver=getenv('DB_ALIAS').'db';
 $dbport='3306';
 $dbtype='mysql';
