@@ -10,6 +10,7 @@
 * XDebug
 * Drush
 * Drupal Console
+* Magallanes 
 
 ## How to
 
@@ -56,7 +57,7 @@ docker-compose down
 
 ### Config XDebug for VSCode
 
-Install [PHP Debug](https://github.com/felixfbecker/vscode-php-debug) extension and edit PHP Debug ```launch.json```.
+Install [PHP Debug](https://github.com/felixfbecker/vscode-php-debug) extension and edit PHP Debug's ```launch.json```.
 
 ```json
 {
@@ -74,6 +75,26 @@ Install [PHP Debug](https://github.com/felixfbecker/vscode-php-debug) extension 
     ]
 }
 ```
+### Config XDebug for PHPStorm
+
+* With this project opened in PHPStorm go to **Run/Edit Configurations**.
+* Click on **Add New Configuration** and select **PHP Remote Debug option**.
+  * Name: ```docker```
+  * Ide key (session id): ```docker```
+* Click on three dots button next to Servers
+* **Add new server**
+  * Name: ```docker````
+  * Host: ```localhost````
+  * Port: ```80``` (Equal to your HTTP_PORT .env config)
+  * Debugger: Xdebug
+  * Use path mappings: _Checked_
+  * File/Directory: _Select your project root dir in your host_
+  * Absolute path on the server: ```/var/www/html```
+* Apply all and that's ok.
+
+## Config Magallanes
+
+Visit the [Magallanes documentation](https://www.magephp.com/#configuration) to read about Magallanes configuration.
 
 ## Custom Docker Scripts
 
