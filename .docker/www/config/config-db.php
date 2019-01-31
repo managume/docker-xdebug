@@ -13,6 +13,6 @@ $dbuser=getenv('DB_USER');
 $dbpass=getenv('DB_PASSWORD');
 $basepath='';
 $dbname='phpmyadmin';
-$dbserver=getenv('DB_ALIAS').'db';
+$dbserver=getenv('APP_NAME').'db';
 $dbport='3306';
 $dbtype='mysql';
