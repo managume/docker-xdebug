@@ -37,10 +37,10 @@ unlink dcomposer
 fi
 ln -s .docker/bin/docker-composer dcomposer
 
-if [ -L 'dconsole' ]; then
-unlink dconsole
+if [ -L 'ddrupal' ]; then
+unlink ddrupal
 fi
-ln -s .docker/bin/docker-console dconsole
+ln -s .docker/bin/docker-drupal ddrupal
 
 if [ -L 'dnpm' ]; then
 unlink dnpm

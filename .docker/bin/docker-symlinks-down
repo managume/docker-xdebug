@@ -30,8 +30,8 @@ if [ -L 'dcomposer' ]; then
 unlink dcomposer
 fi
 
-if [ -L 'dconsole' ]; then
-unlink dconsole
+if [ -L 'ddrupal' ]; then
+unlink ddrupal
 fi
 
 if [ -L 'dnpm' ]; then
