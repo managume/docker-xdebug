@@ -10,7 +10,6 @@
 * XDebug
 * Drush
 * Drupal Console
-* Magallanes 
 
 ## How to
 
@@ -91,10 +90,6 @@ Install [PHP Debug](https://github.com/felixfbecker/vscode-php-debug) extension 
   * File/Directory: _Select your project root dir in your host_
   * Absolute path on the server: ```/var/www/html```
 * Apply all and that's ok.
-
-## Config Magallanes
-
-Visit the [Magallanes documentation](https://www.magephp.com/#configuration) to read about Magallanes configuration.
 
 ## Custom Docker Scripts
 
