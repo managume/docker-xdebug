@@ -54,13 +54,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install Drush
 RUN composer global require drush/drush:8.x
-RUN mv /root/.composer/ /var/www/.composer
-ENV PATH="$PATH:/var/www/.composer/vendor/bin"
-
-# Install Drupal Console
-RUN curl https://drupalconsole.com/installer -L -o drupal.phar \
-&& mv drupal.phar /usr/local/bin/drupal \
-&& chmod +x /usr/local/bin/drupal
+RUN cd /var/www/html && composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
+ENV PATH "$PATH:/root/.composer/vendor/bin/:/var/www/.composer/vendor/bin/"
 
 # Install PHPMyAdmin
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y phpmyadmin

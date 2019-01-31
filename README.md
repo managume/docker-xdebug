@@ -86,5 +86,5 @@ After exec ```sh .docker/bin/docker-symlinks-up``` following commands are availa
 * ```sh droot``` Execute with root user
 * ```sh dcomposer``` Composer
 * ```sh ddrush``` Drush
-* ```sh dconsole``` Drupal console
+* ```sh ddrupal``` Drupal console
 * ```sh dnpm``` Npm         
